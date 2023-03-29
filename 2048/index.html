@@ -33,7 +33,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
   </head>
   <body onload="return countdown();">
-    <div class="conatainer" style="background-color: #000;">
+    <div class="conatainer" style="background-color: #000">
       <div class="row ml-0">
         <div class="col-lg-6">
           <div class="containerGame">
@@ -44,14 +44,14 @@
                 <div class="best-container">0</div>
               </div>
             </div>
-      
+
             <div class="above-game">
               <p class="game-intro">
                 Join the numbers and get to the <strong>2048 tile!</strong>
               </p>
               <a class="restart-button">New Game</a>
             </div>
-      
+
             <div class="game-container">
               <div class="game-message">
                 <p></p>
@@ -60,7 +60,7 @@
                   <a class="retry-button">Try again</a>
                 </div>
               </div>
-      
+
               <div class="grid-container">
                 <div class="grid-row">
                   <div class="grid-cell"></div>
@@ -87,22 +87,22 @@
                   <div class="grid-cell"></div>
                 </div>
               </div>
-      
+
               <div class="tile-container"></div>
             </div>
-      
+
             <p class="game-explanation">
               <strong class="important">How to play:</strong> Use your
-              <strong>arrow keys</strong> to move the tiles. When two tiles with the
-              same number touch, they <strong>merge into one!</strong>
+              <strong>arrow keys</strong> to move the tiles. When two tiles with
+              the same number touch, they <strong>merge into one!</strong>
             </p>
           </div>
         </div>
         <div class="col-lg-6 text-center mt-5 rightSide">
-          <img src="../images/logo.svg" width="30%">
+          <img src="../images/logo.svg" width="30%" />
           <h3>VIDYUT</h3>
           <h4>TIME LEFT</h4>
-          <p><span class="js-timeout">2:00</p>
+          <p><span class="js-timeout">2:00</span></p>
         </div>
       </div>
     </div>
@@ -115,51 +115,57 @@
       var interval;
       function countdown() {
         clearInterval(interval);
-        interval = setInterval( function() {
-            var timer = $('.js-timeout').html();
-            timer = timer.split(':');
-            var minutes = timer[0];
-            var seconds = timer[1];
-            seconds -= 1;
-            if (minutes < 0) return;
-            else if (seconds < 0 && minutes != 0) {
-                minutes -= 1;
-                seconds = 59;
-            }
-            else if (seconds < 10 && length.seconds != 2) seconds = '0' + seconds;
-      
-            $('.js-timeout').html(minutes + ':' + seconds);
-      
-            if (minutes == 0 && seconds == 0){
-              clearInterval(interval);
-              let text = document.getElementById('score').innerHTML;
-              const myArray = text.split("<");
-              var score = myArray[0];
-              var name = localStorage.getItem("VidyutName")
-              var college = localStorage.getItem("VidyutCollege")
-              var contact = localStorage.getItem("VidyutContact")
-              var game = localStorage.getItem("VidyutGame")
-              $.ajax({
-                url: "https://script.google.com/macros/s/AKfycbzQb54kwKSPQHs15hQCOoDWArUQPwb9RPiSMn-vvcGph-h5AXlXMlCXDunj_9eis00grg/exec",
-                data: {Name: name, College: college, Contact: contact, Game: game, Score: score},
-                method: "post",
-                success: function (response) {
-                  alert("Time up!")
-                  localStorage.removeItem('VidyutName');
-                  localStorage.removeItem('VidyutCollege');
-                  localStorage.removeItem('VidyutContact');
-                  localStorage.removeItem('VidyutGame');
-                  localStorage.removeItem('gameState');
-                  window.location.href = "../";
-                  return false
-                },
-                error: function (err) {
-                  alert("Some error occured!")
-                  window.location.href = "../";
-                  return false
-                },
-              });
-            }
+        interval = setInterval(function () {
+          var timer = $(".js-timeout").html();
+          timer = timer.split(":");
+          var minutes = timer[0];
+          var seconds = timer[1];
+          seconds -= 1;
+          if (minutes < 0) return;
+          else if (seconds < 0 && minutes != 0) {
+            minutes -= 1;
+            seconds = 59;
+          } else if (seconds < 10 && length.seconds != 2)
+            seconds = "0" + seconds;
+
+          $(".js-timeout").html(minutes + ":" + seconds);
+
+          if (minutes == 0 && seconds == 0) {
+            clearInterval(interval);
+            let text = document.getElementById("score").innerHTML;
+            const myArray = text.split("<");
+            var score = myArray[0];
+            var name = localStorage.getItem("VidyutName");
+            var college = localStorage.getItem("VidyutCollege");
+            var contact = localStorage.getItem("VidyutContact");
+            var game = localStorage.getItem("VidyutGame");
+            $.ajax({
+              url: "https://script.google.com/macros/s/AKfycbzQb54kwKSPQHs15hQCOoDWArUQPwb9RPiSMn-vvcGph-h5AXlXMlCXDunj_9eis00grg/exec",
+              data: {
+                Name: name,
+                College: college,
+                Contact: contact,
+                Game: game,
+                Score: score,
+              },
+              method: "post",
+              success: function (response) {
+                alert("Time up!");
+                localStorage.removeItem("VidyutName");
+                localStorage.removeItem("VidyutCollege");
+                localStorage.removeItem("VidyutContact");
+                localStorage.removeItem("VidyutGame");
+                localStorage.removeItem("gameState");
+                window.location.href = "../";
+                return false;
+              },
+              error: function (err) {
+                alert("Some error occured!");
+                window.location.href = "../";
+                return false;
+              },
+            });
+          }
         }, 1000);
       }
     </script>
@@ -178,8 +184,8 @@
       var b = localStorage.getItem("VidyutCollege");
       var c = localStorage.getItem("VidyutContact");
       var d = localStorage.getItem("VidyutGame");
-      if (a == null | b == null | c == null | d == null){
-        window.location.href = "http://127.0.0.1:5500";
+      if ((a == null) | (b == null) | (c == null) | (d == null)) {
+        window.location.href = "../";
       }
     </script>
   </body>
