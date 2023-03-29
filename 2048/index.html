@@ -40,7 +40,7 @@
             <div class="heading">
               <h1 class="title">2048</h1>
               <div class="scores-container">
-                <div class="score-container">0</div>
+                <div id="score" class="score-container">0</div>
                 <div class="best-container">0</div>
               </div>
             </div>
@@ -112,7 +112,9 @@
       crossorigin="anonymous"
     ></script>
     <script>
+      var interval;
       function countdown() {
+        clearInterval(interval);
         interval = setInterval( function() {
             var timer = $('.js-timeout').html();
             timer = timer.split(':');
@@ -129,8 +131,22 @@
             $('.js-timeout').html(minutes + ':' + seconds);
       
             if (minutes == 0 && seconds == 0){
-              alert("Time up!");
-              
+              clearInterval(interval);
+              var score = document.getElementById('score').innerHTML;
+              var name = localStorage.getItem("VidyutName")
+              var college = localStorage.getItem("VidyutCollege")
+              var contact = localStorage.getItem("VidyutContact")
+              var game = localStorage.getItem("VidyutGame")
+              $.ajax({
+                url: "https://script.google.com/macros/s/AKfycbzQb54kwKSPQHs15hQCOoDWArUQPwb9RPiSMn-vvcGph-h5AXlXMlCXDunj_9eis00grg/exec",
+                data: {Name: name, College: college, Contact: contact, Game: game, Score: score},
+                method: "post"
+              });
+              localStorage.removeItem('VidyutName');
+              localStorage.removeItem('VidyutCollege');
+              localStorage.removeItem('VidyutContact');
+              localStorage.removeItem('VidyutGame');
+              localStorage.removeItem('gameState');
             }
         }, 1000);
       }
@@ -151,7 +167,7 @@
       var c = localStorage.getItem("VidyutContact");
       var d = localStorage.getItem("VidyutGame");
       if (a == null | b == null | c == null | d == null){
-        window.location.href = "http://127.0.0.1:5500"
+        window.location.href = "http://127.0.0.1:5500";
       }
     </script>
   </body>
