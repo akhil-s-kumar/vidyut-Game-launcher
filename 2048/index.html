@@ -30,6 +30,7 @@
       integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp"
       crossorigin="anonymous"
     />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
   </head>
   <body onload="countdown();">
     <div class="conatainer" style="background-color: #000;">
@@ -101,7 +102,7 @@
           <img src="../images/logo.svg" width="30%">
           <h3>VIDYUT</h3>
           <h4>TIME LEFT</h4>
-          <h1 id="js-timeout"></h1>
+          <p><span class="js-timeout">2:00</p>
         </div>
       </div>
     </div>
@@ -112,9 +113,8 @@
     ></script>
     <script>
       function countdown() {
-        clearInterval(interval);
         interval = setInterval( function() {
-            var timer = document.getElementById('js-timeout').innerHTML;
+            var timer = $('.js-timeout').html();
             timer = timer.split(':');
             var minutes = timer[0];
             var seconds = timer[1];
@@ -128,7 +128,10 @@
       
             $('.js-timeout').html(minutes + ':' + seconds);
       
-            if (minutes == 0 && seconds == 0) clearInterval(interval);
+            if (minutes == 0 && seconds == 0){
+              alert("Time up!");
+              
+            }
         }, 1000);
       }
     </script>

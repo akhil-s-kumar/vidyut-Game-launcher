@@ -781,3 +781,10 @@ hr {
   font-size: 50px;
   margin-top: 20px;
 }
+
+.rightSide p{
+  font-family: 'IBM Plex Mono', monospace;
+  color: #fff;
+  font-size: 100px;
+  font-weight: 800;
+}
