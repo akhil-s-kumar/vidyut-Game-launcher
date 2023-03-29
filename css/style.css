@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@100;200;300;400;500;700&display=swap');
+
+body{
+    font-family: 'Raleway', sans-serif !important;
+    background-color: #000000 !important;
+}
+
+.mainSec{
+    padding-top: 100px;
+}
+
+.mainSec h1{
+    margin-top: 10px;
+    color: #FFFF;
+    font-weight: 700;
+    letter-spacing: 10px;
+}
+
+.mainSec form{
+    margin-top: 80px;
+    font-family: 'IBM Plex Mono', monospace;
+}
+
+.mainSec form input, .mainSec form input:active, .mainSec form input:focus{
+    box-shadow: none;
+    outline: none;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    background-color: transparent;
+    border: 1px solid #fff;
+    border-radius: 0px;
+    color: #fff !important;
+    height: 60px;
+}
+
+.mainSec form input::placeholder{
+    color: #fff;
+}
+
+.mainSec .btn, .mainSec .btn:focus{
+    box-shadow: none;
+    outline: none;
+    border: none;
+    width: 80%;
+    border-radius: 0px;
+    height: 60px;
+    background-color: #fff;
+    color: #000000;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.mainSec .btn:hover{
+    background-color: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+}
+
+.mainSec .games{
+    margin-top: 80px;
+    font-family: 'IBM Plex Mono', monospace;
+}
+
+.mainSec .games .game{
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.copyright p{
+    font-family: 'IBM Plex Mono', monospace;
+    margin-top: 100px;
+    color: #fff;
+}
