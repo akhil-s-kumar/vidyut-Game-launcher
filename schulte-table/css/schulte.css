@@ -215,9 +215,9 @@ select::-ms-expand {
     width: 5vmin;
     height: 5vmin;
     padding: 0;
-    background: transparent url('../img/settings_48.png') no-repeat;
+    background: transparent url('../img/settings.png') no-repeat;
     background-size: 5vmin 5vmin;
-    opacity: 0.10;
+    opacity: 0.5;
     border: none;
     outline-style: none;
     transition: opacity 500ms;
