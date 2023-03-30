@@ -277,5 +277,6 @@ select::-ms-expand {
   color: #fff;
   font-family: "IBM Plex Mono", monospace;
   font-size: 50px;
+  font-weight: 800;
   margin-top: 20px;
 }
