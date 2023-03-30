@@ -22,13 +22,21 @@ select::-ms-expand {
     display: none;
 }
 
+.gameName{
+    color: #fff;
+    font-weight: 800;
+    margin-left: 10px;
+    font-size: 45px;
+}
+
 .wrapper {
     width: 50vw;
     height: 80vh;
     overflow-y: hidden;
     overflow-x: hidden;
-    margin-top: 80px !important;
-    margin-bottom: 80px !important;
+    margin-top: 40px !important;
+    margin-bottom: 40px !important;
+    margin-left: 10px !important;
 }
 
 .row {
