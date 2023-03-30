@@ -24,9 +24,11 @@ select::-ms-expand {
 
 .wrapper {
     width: 50vw;
-    height: 100vh;
+    height: 80vh;
     overflow-y: hidden;
     overflow-x: hidden;
+    margin-top: 80px !important;
+    margin-bottom: 80px !important;
 }
 
 .row {
