@@ -1,268 +1,281 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@100;200;300;400;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@100;200;300;400;500;700&display=swap");
 
 * {
-    margin: 0;
-    box-sizing: border-box; /* padding and border incleded in the width/height */
+  margin: 0;
+  box-sizing: border-box; /* padding and border incleded in the width/height */
 }
 
 body {
-    font-family: 'IBM Plex Mono', monospace;
-    background-color: #000;
+  font-family: "IBM Plex Mono", monospace;
+  background-color: #000;
 }
 
 select {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    padding: 5px 25px 5px 5px;
-    background: url('../img/dr_down_16.png') no-repeat right;
-    background-position-x: calc(100% - 5px);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding: 5px 25px 5px 5px;
+  background: url("../img/dr_down_16.png") no-repeat right;
+  background-position-x: calc(100% - 5px);
 }
 
 select::-ms-expand {
-    display: none;
+  display: none;
 }
 
 .wrapper {
-    width: 50vw;
-    height: 80vh;
-    overflow-y: hidden;
-    overflow-x: hidden;
-    margin-top: 40px !important;
-    margin-bottom: 40px !important;
-    margin-left: 10px !important;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  margin-top: 80px !important;
+  margin-bottom: 80px !important;
+  margin-left: 10px !important;
+  margin-right: 10px !important;
 }
 
-.row {
-    width: 100%;
-    height: 50%;
-    margin: 0;
+.gameRow {
+  width: 100%;
+  height: 50%;
+  margin: 0;
 }
 
 .cell {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: flex;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
 
-    -webkit-user-select: none;
-    -moz-user-select: -moz-none;
-    -ms-user-select: none;
-    user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: -moz-none;
+  -ms-user-select: none;
+  user-select: none;
 
-    justify-content: center; /* align horizontal */
-    align-items: center;
+  justify-content: center; /* align horizontal */
+  align-items: center;
 
-    float: left;
-    padding: 0;
+  float: left;
+  padding: 0;
 
-    width: 50%;
-    height: 100%;
+  border: 1px solid #ccc;
+  cursor: default;
 
-    border: 1px solid #ccc;
-    cursor: default;
+  font-size: calc(8vmin);
+  font-weight: bold;
 
-    font-size: calc(8vmin);
-    font-weight: bold;
-
-    transition: background 800ms;
+  transition: background 800ms;
 }
 
-.cell span{
-    color: #fff !important;
+.cell span {
+  color: #fff !important;
 }
 
 .rotate-90 {
-    -moz-transform: rotate(90deg);
-    -ms-transform: rotate(90deg); /* IE 9 */
-    -webkit-transform: rotate(90deg);
-    transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg); /* IE 9 */
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
 }
 
 .rotate-180 {
-    -moz-transform: rotate(180deg);
-    -ms-transform: rotate(180deg); /* IE 9 */
-    -webkit-transform: rotate(180deg);
-    transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg); /* IE 9 */
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 
 .rotate-270 {
-    -moz-transform: rotate(270deg);
-    -ms-transform: rotate(270deg); /* IE 9 */
-    -webkit-transform: rotate(270deg);
-    transform: rotate(270deg);
+  -moz-transform: rotate(270deg);
+  -ms-transform: rotate(270deg); /* IE 9 */
+  -webkit-transform: rotate(270deg);
+  transform: rotate(270deg);
 }
 
 .spin-right {
-    animation: spin-right 2s infinite linear;
-    -webkit-animation: spin-right 2s infinite linear;
-    -moz-animation: spin-right 2s infinite linear;
+  animation: spin-right 2s infinite linear;
+  -webkit-animation: spin-right 2s infinite linear;
+  -moz-animation: spin-right 2s infinite linear;
 }
 
-    @keyframes spin-right{
-        0% {
-            -moz-transform: rotate(0deg);
-            -ms-transform: rotate(0deg);
-            -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-        }
-        100% {
-            -moz-transform: rotate(359deg);
-            -ms-transform: rotate(359deg);
-            -webkit-transform: rotate(359deg);
-            transform: rotate(359deg);
-        }
-    }
-    @-webkit-keyframes spin-right{
-        0% {
-            -moz-transform: rotate(0deg);
-            -ms-transform: rotate(0deg);
-            -webkit-transform: rotate(0deg);
-            transform: rotate(0deg)
-        }
-        100% {
-            -ms-transform: rotate(359deg);
-            -moz-transform: rotate(359deg);
-            -webkit-transform: rotate(359deg);
-            transform: rotate(359deg)
-        }
-    }
+@keyframes spin-right {
+  0% {
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -moz-transform: rotate(359deg);
+    -ms-transform: rotate(359deg);
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+@-webkit-keyframes spin-right {
+  0% {
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -ms-transform: rotate(359deg);
+    -moz-transform: rotate(359deg);
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
 
 .spin-left {
-    animation: spin-left 2s infinite linear;
-    -webkit-animation: spin-left 2s infinite linear;
-    -moz-animation: spin-left 2s infinite linear;
+  animation: spin-left 2s infinite linear;
+  -webkit-animation: spin-left 2s infinite linear;
+  -moz-animation: spin-left 2s infinite linear;
 }
 
-    @keyframes spin-left{
-        0% {
-            -moz-transform: rotate(0deg);
-            -ms-transform: rotate(0deg);
-            -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-        }
-        100% {
-            -moz-transform: rotate(-359deg);
-            -ms-transform: rotate(-359deg);
-            -webkit-transform: rotate(-359deg);
-            transform: rotate(-359deg);
-        }
-    }
-    @-webkit-keyframes spin-left{
-        0% {
-            -moz-transform: rotate(0deg);
-            -ms-transform: rotate(0deg);
-            -webkit-transform: rotate(0deg);
-            transform: rotate(0deg)
-        }
-        100% {
-            -moz-transform: rotate(-359deg);
-            -ms-transform: rotate(-359deg);
-            -webkit-transform: rotate(-359deg);
-            transform: rotate(-359deg)
-        }
-    }
-
+@keyframes spin-left {
+  0% {
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -moz-transform: rotate(-359deg);
+    -ms-transform: rotate(-359deg);
+    -webkit-transform: rotate(-359deg);
+    transform: rotate(-359deg);
+  }
+}
+@-webkit-keyframes spin-left {
+  0% {
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -moz-transform: rotate(-359deg);
+    -ms-transform: rotate(-359deg);
+    -webkit-transform: rotate(-359deg);
+    transform: rotate(-359deg);
+  }
+}
 
 .cell-symbol {
-    color: inherit;
-    font-size: calc(8vmin);
-    font-weight: bold;
+  color: inherit;
+  font-size: calc(8vmin);
+  font-weight: bold;
 }
 
 .normal-cell {
-    color: black;
-    background: white;
+  color: black;
+  background: white;
 }
 
 .hovered-cell {
-    color: black;
-    /*background: rgb(249, 246, 243);*/
-    border: 1px solid #555;
+  color: black;
+  /*background: rgb(249, 246, 243);*/
+  border: 1px solid #555;
 }
 
 .traced-cell {
-    color: black;
-    background: green;
+  color: black;
+  background: green;
 }
 
 .selected-cell {
-    color: white;
-    background: navy;
+  color: white;
+  background: navy;
 }
 
 .correct-cell {
-    color: black;
-    background: #bbf4b8;
+  color: black;
+  background: #bbf4b8;
 }
 
 .wrong-cell {
-    color: black;
-    background: red;
+  color: black;
+  background: red;
 }
 
 .color-num {
-    padding: 3px 10px;
-    margin-right: 2px;
-    margin-bottom: 5px;
-    display: inline-block;
-    border: 1px solid #ccc;
-    font-size: 1.1em;
-    font-weight: bold;
+  padding: 3px 10px;
+  margin-right: 2px;
+  margin-bottom: 5px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  font-size: 1.1em;
+  font-weight: bold;
 }
 
 #settings-btn {
-    position: fixed;
-    right: 0;
-    top: 0;
-    width: 5vmin;
-    height: 5vmin;
-    padding: 0;
-    background: transparent url('../img/settings.png') no-repeat;
-    background-size: 5vmin 5vmin;
-    opacity: 0.5;
-    border: none;
-    outline-style: none;
-    transition: opacity 500ms;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 5vmin;
+  height: 5vmin;
+  padding: 0;
+  background: transparent url("../img/settings.png") no-repeat;
+  background-size: 5vmin 5vmin;
+  opacity: 0.5;
+  border: none;
+  outline-style: none;
+  transition: opacity 500ms;
 }
 
 #settings-btn:hover {
-    opacity: 1;
+  opacity: 1;
 }
 
 .grid-input {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
 }
 
 .hover-text-bold:hover {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .display-block {
-    display: block;
+  display: block;
 }
 
 .display-none {
-    display: none;
+  display: none;
 }
 
 .mouse-map {
-    background: white;
-    border: 2px solid #ccc;
+  background: white;
+  border: 2px solid #ccc;
 }
 
 .center-dot {
-    position:absolute;
-    top:50%;
-    left:50%;
-    width: 10px;
-    height: 10px;
-    -ms-transform: translateX(-50%) translateY(-50%);
-    -webkit-transform: translate(-50%,-50%);
-    transform: translate(-50%,-50%);
-    pointer-events: none;
-    background: url('../img/green_dot.png');
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  background: url("../img/green_dot.png");
+}
+
+.rightSide{
+    margin-top: 80px !important;
+}
+
+.rightSide h3 {
+  color: #fff;
+  letter-spacing: 10px;
+  font-size: 30px;
+  margin-top: 20px;
+}
+
+.rightSide h4 {
+  color: #fff;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 50px;
+  margin-top: 20px;
 }
