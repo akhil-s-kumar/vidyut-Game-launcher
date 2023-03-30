@@ -25,7 +25,7 @@ select::-ms-expand {
 .wrapper {
   overflow-y: hidden;
   overflow-x: hidden;
-  margin-top: 80px !important;
+  margin-top: 120px !important;
   margin-bottom: 80px !important;
   margin-left: 10px !important;
   margin-right: 10px !important;
@@ -262,8 +262,8 @@ select::-ms-expand {
   background: url("../img/green_dot.png");
 }
 
-.rightSide{
-    margin-top: 80px !important;
+.rightSide {
+  margin-top: 80px !important;
 }
 
 .rightSide h3 {
@@ -277,6 +277,13 @@ select::-ms-expand {
   color: #fff;
   font-family: "IBM Plex Mono", monospace;
   font-size: 50px;
-  font-weight: 800;
+  font-weight: 800 !important;
   margin-top: 20px;
+}
+
+.rightSide p {
+  font-family: "IBM Plex Mono", monospace;
+  color: #fff;
+  font-size: 100px;
+  font-weight: 800;
 }

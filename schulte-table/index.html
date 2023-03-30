@@ -76,14 +76,14 @@
                 style="min-width: 350px; max-width: 600px"
               >
                 <header class="w3-container w3-white w3-center">
-                  <span
+                  <!--<span
                     @click="hideDialog"
                     class="w3-button w3-display-topright w3-xxlarge w3-white w3-hover-white w3-hover-text-black"
                     style="padding: 0 10px 0 0"
                     title="Resume Test"
                   >
                     &times;
-                  </span>
+                  </span>-->
                   <h2>Schulte Table</h2>
                 </header>
 
@@ -403,6 +403,7 @@
                     style="width: 80%; margin: 10px"
                     @click="hideDialog(); startGame()"
                     ref="btn"
+                    id="start"
                   >
                     Start Game
                   </button>
@@ -414,7 +415,9 @@
         <div class="col-lg-6 text-center mt-5 rightSide">
           <img src="../images/logo.svg" width="30%" />
           <h3>VIDYUT</h3>
-          <h4>SCHULTE TABLE</h4>
+          <h4>TIME ELAPSED</h4>
+          <p id="timer">00:00</p>
+          <button id="stop">Stop</button>
         </div>
       </div>
     </div>
@@ -424,5 +427,48 @@
       crossorigin="anonymous"
     ></script>
     <script src="js/schulte.js"></script>
+    <script>
+      var watch = (function () {
+        var timer = document.getElementById("timer");
+        var stop = document.getElementById("stop");
+        var time = "00:00";
+        var seconds = 0;
+        var minutes = 0;
+        var t;
+
+        timer.textContent = time;
+
+        function buildTimer() {
+          seconds++;
+          if (seconds >= 60) {
+            seconds = 0;
+            minutes++;
+            if (minutes >= 60) {
+              minutes = 0;
+              seconds = 0;
+            }
+          }
+          timer.textContent =
+            (minutes < 10 ? "0" + minutes.toString() : minutes) +
+            ":" +
+            (seconds < 10 ? "0" + seconds.toString() : seconds);
+        }
+        function startTimer() {
+          start.addEventListener("click", function () {
+            clearTimeout(t);
+            t = setInterval(buildTimer, 1000);
+          });
+        }
+        function stopTimer() {
+          stop.addEventListener("click", function () {
+            clearTimeout(t);
+          });
+        }
+        return {
+          start: startTimer(),
+          stop: stopTimer()
+        };
+      })();
+    </script>
   </body>
 </html>

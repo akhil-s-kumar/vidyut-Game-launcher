@@ -285,6 +285,7 @@ vueApp = new Vue({
                         if (this.stats.correctClicks >= this.cells.length) {
                             this.stopGame();
                             this.execDialog('stats');
+                            document.getElementById('stop').click();
                         } else {
                             this.nextNum();
                         }
