@@ -768,6 +768,10 @@ hr {
   --bs-gutter-x: 0rem !important;
 }
 
+.rightSide{
+  padding-top: 200px;
+}
+
 .rightSide h3{
   color: #fff;
   letter-spacing: 10px;

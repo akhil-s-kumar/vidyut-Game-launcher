@@ -17,8 +17,8 @@
     <div class="container mainSec">
       <div class="row text-center">
         <div class="col-lg-12">
-          <img src="./images/logo.svg" width="100" />
-          <h1>VIDYUT</h1>
+          <img src="./images/logo.jpeg" width="20%" />
+          <h1>ICPC ASIA</h1>
         </div>
       </div>
       <div class="row">
@@ -57,9 +57,9 @@
             <div class="game">
               <button type="submit" class="btn" onclick="return game('2048')">2048</button>
             </div>
-            <!--<div class="game">
-              <button type="submit" class="btn" onclick="return game('Sliding-Puzzle')">SLIDING PUZZLE</button>
-            </div>-->
+            <div class="game">
+              <button disabled type="submit" class="btn" onclick="return game('Sliding-Puzzle')">SLIDING PUZZLE</button>
+            </div>
             <div class="game">
               <button type="submit" class="btn" onclick="return game('Schulte-Table')">SCHULTE TABLE</button>
             </div>
@@ -96,6 +96,8 @@
                   window.location.href = "./2048"
                 }else if (game == "Schulte-Table"){
                   window.location.href = "./schulte-table"
+                }else if (game == "Sliding-Puzzle"){
+                  window.location.href = "./sliding-puzzle"
                 }
                 return false
             }
