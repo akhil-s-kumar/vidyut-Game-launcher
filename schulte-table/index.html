@@ -20,6 +20,7 @@
         display: none;
       }
     </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
   </head>
   <body>
     <div class="container">
@@ -153,7 +154,7 @@
                   </div>
 
                   <div class="w3-row">
-                    <div class="w3-col w3-half">
+                    <!--<div class="w3-col w3-half">
                       <input
                         class="w3-check"
                         type="checkbox"
@@ -179,7 +180,7 @@
                         style="margin-top: 5px"
                       />
                       <label class="w3-validate">Various Counts </label>
-                    </div>
+                    </div>-->
                     <div class="w3-col w3-half">
                       <div
                         class="w3-container w3-padding-0"
@@ -417,7 +418,7 @@
           <h3>VIDYUT</h3>
           <h4>TIME ELAPSED</h4>
           <p id="timer">00:00</p>
-          <button id="stop">Stop</button>
+          <button id="stop" style="display:none">Stop</button>
         </div>
       </div>
     </div>
@@ -469,6 +470,15 @@
           stop: stopTimer()
         };
       })();
+    </script>
+    <script>
+      var a = localStorage.getItem("VidyutName");
+      var b = localStorage.getItem("VidyutCollege");
+      var c = localStorage.getItem("VidyutContact");
+      var d = localStorage.getItem("VidyutGame");
+      if ((a == null) | (b == null) | (c == null) | (d == null)) {
+        window.location.href = "../";
+      }
     </script>
   </body>
 </html>
