@@ -26,7 +26,16 @@ HTMLActuator.prototype.actuate = function (grid, metadata) {
 
     if (metadata.terminated) {
       if (metadata.over) {
+        function redirect() {
+          window.location.href = "../";
+        }
         self.message(false); // You lose
+        localStorage.removeItem("VidyutName");
+        localStorage.removeItem("VidyutCollege");
+        localStorage.removeItem("VidyutContact");
+        localStorage.removeItem("VidyutGame");
+        localStorage.removeItem("gameState");
+        setTimeout(redirect, 3000)
       } else if (metadata.won) {
         self.message(true); // You win!
       }
