@@ -519,6 +519,7 @@ function checkWinState() {
     var winConfetti = confetti.create(grid, { resize: true });
     // grid.style.zIndex=2
     console.log("Win!!!");
+	document.getElementById("stop").click();
 	var name = localStorage.getItem("VidyutName");
     var college = localStorage.getItem("VidyutCollege");
     var contact = localStorage.getItem("VidyutContact");
