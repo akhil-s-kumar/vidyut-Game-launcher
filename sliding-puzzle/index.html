@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-	<meta charset="utf-8" />
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" href="style.css" media="screen" />
     <link rel="shortcut icon" href="../images/favicon.ico" />
     <title>Vidyut - Sliding Puzzle</title>
   </head>
-  <body>
+  <body onload="return initialAction();">
     <div class="flexMain">
       <div class="flexChild containerMain">
         <!--<canvas id="confetti"></canvas>-->
@@ -73,12 +73,13 @@
 
       <!--<div id="panel"></div>-->
       <div class="flexChild rightSide">
-        <img src="../images/logo.jpeg" width="25%" />
-        <h4>TIME LEFT</h4>
-        <p><span class="js-timeout">2:00</span></p>
+        <img src="../images/logo.jpeg" width="50%" />
+        <h4>TIME ELAPSED</h4>
+        <p id="timer"></p>
+        <button id="start" style="display: none">Start</button>
+        <button id="stop" style="display: none">Stop</button>
       </div>
     </div>
-
     <script
       src="https://code.jquery.com/jquery-3.6.0.js"
       integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
@@ -89,7 +90,63 @@
     <script type="text/javascript" src="js/hashset.js"></script>
     <script type="text/javascript" src="js/hashtable.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
-
     <script type="text/javascript" src="index.js"></script>
+    <script>
+      var watch = (function () {
+        var timer = document.getElementById("timer");
+		var start = document.getElementById("start");
+        var stop = document.getElementById("stop");
+        var time = "00:00";
+        var seconds = 0;
+        var minutes = 0;
+        var t;
+
+        timer.textContent = time;
+
+        function buildTimer() {
+          seconds++;
+          if (seconds >= 60) {
+            seconds = 0;
+            minutes++;
+            if (minutes >= 60) {
+              minutes = 0;
+              seconds = 0;
+            }
+          }
+          timer.textContent =
+            (minutes < 10 ? "0" + minutes.toString() : minutes) +
+            ":" +
+            (seconds < 10 ? "0" + seconds.toString() : seconds);
+        }
+        function startTimer() {
+          start.addEventListener("click", function () {
+            clearTimeout(t);
+            t = setInterval(buildTimer, 1000);
+          });
+        }
+        function stopTimer() {
+          stop.addEventListener("click", function () {
+            clearTimeout(t);
+          });
+        }
+        return {
+          start: startTimer(),
+          stop: stopTimer(),
+        };
+      })();
+    </script>
+    <script>
+      const initialAction = () => {
+        var a = localStorage.getItem("VidyutName");
+        var b = localStorage.getItem("VidyutCollege");
+        var c = localStorage.getItem("VidyutContact");
+        var d = localStorage.getItem("VidyutGame");
+        if ((a == null) | (b == null) | (c == null) | (d == null)) {
+          window.location.href = "../";
+        } else {
+          document.getElementById("start").click();
+        }
+      };
+    </script>
   </body>
 </html>
